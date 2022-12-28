@@ -8,7 +8,7 @@ function isLoggedIn(req, res, next) {
 //routes
 router.get("/login/google",passport.authenticate("google", { scope: ["email", "profile"] }));
 router.get("/google/callback",passport.authenticate("google", {
-    successRedirect: "http://localhost:3000", //hare we need the route of after login
+    successRedirect: "https://multi-market.vercel.app/", //hare we need the route of after login
     failureRedirect: "/auth/google/failure",
   })
 );
@@ -22,7 +22,7 @@ router.get("/logout", (req, res) => {
     if (err) {
       console.log(err);
     }
-    res.redirect("http://localhost:3000");
+    res.redirect("https://multi-market.vercel.app/");
   });
 });
 
